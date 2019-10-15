@@ -1,0 +1,14 @@
+C:\Users\ahmed\source\repos\MySQLDemo\MySQLIdentity\bin\Debug\netcoreapp2.2\MySQLIdentity.deps.json
+C:\Users\ahmed\source\repos\MySQLDemo\MySQLIdentity\bin\Debug\netcoreapp2.2\MySQLIdentity.runtimeconfig.json
+C:\Users\ahmed\source\repos\MySQLDemo\MySQLIdentity\bin\Debug\netcoreapp2.2\MySQLIdentity.runtimeconfig.dev.json
+C:\Users\ahmed\source\repos\MySQLDemo\MySQLIdentity\bin\Debug\netcoreapp2.2\MySQLIdentity.dll
+C:\Users\ahmed\source\repos\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.csprojAssemblyReference.cache
+C:\Users\ahmed\source\repos\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.csproj.CoreCompileInputs.cache
+C:\Users\ahmed\source\repos\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.RazorAssemblyInfo.cache
+C:\Users\ahmed\source\repos\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.RazorAssemblyInfo.cs
+C:\Users\ahmed\source\repos\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.AssemblyInfoInputs.cache
+C:\Users\ahmed\source\repos\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.AssemblyInfo.cs
+C:\Users\ahmed\source\repos\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.RazorTargetAssemblyInfo.cache
+C:\Users\ahmed\source\repos\MySQLDemo\MySQLIdentity\bin\Debug\netcoreapp2.2\MySQLIdentity.pdb
+C:\Users\ahmed\source\repos\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.dll
+C:\Users\ahmed\source\repos\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.pdb
