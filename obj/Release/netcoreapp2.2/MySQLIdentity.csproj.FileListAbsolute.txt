@@ -1,0 +1,14 @@
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Release\netcoreapp2.2\MySQLIdentity.csprojAssemblyReference.cache
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Release\netcoreapp2.2\MySQLIdentity.csproj.CoreCompileInputs.cache
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Release\netcoreapp2.2\MySQLIdentity.RazorAssemblyInfo.cache
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Release\netcoreapp2.2\MySQLIdentity.RazorAssemblyInfo.cs
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Release\netcoreapp2.2\MySQLIdentity.AssemblyInfoInputs.cache
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Release\netcoreapp2.2\MySQLIdentity.AssemblyInfo.cs
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\bin\Release\netcoreapp2.2\MySQLIdentity.deps.json
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\bin\Release\netcoreapp2.2\MySQLIdentity.runtimeconfig.json
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\bin\Release\netcoreapp2.2\MySQLIdentity.runtimeconfig.dev.json
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\bin\Release\netcoreapp2.2\MySQLIdentity.dll
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\bin\Release\netcoreapp2.2\MySQLIdentity.pdb
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Release\netcoreapp2.2\MySQLIdentity.RazorTargetAssemblyInfo.cache
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Release\netcoreapp2.2\MySQLIdentity.dll
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Release\netcoreapp2.2\MySQLIdentity.pdb

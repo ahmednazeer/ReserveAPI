@@ -20,3 +20,9 @@ E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLId
 E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.AssemblyInfo.cs
 E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.dll
 E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.pdb
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\bin\Debug\netcoreapp2.2\MySQLIdentity.deps.json
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\bin\Debug\netcoreapp2.2\MySQLIdentity.runtimeconfig.json
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\bin\Debug\netcoreapp2.2\MySQLIdentity.runtimeconfig.dev.json
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\bin\Debug\netcoreapp2.2\MySQLIdentity.dll
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\bin\Debug\netcoreapp2.2\MySQLIdentity.pdb
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.RazorTargetAssemblyInfo.cache

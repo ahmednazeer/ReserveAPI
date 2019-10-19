@@ -15,7 +15,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
 using MySQLIdentity.Dtos;
-using MySQLIdentity.Facebook;
+
 using MySQLIdentity.Models;
 using MySQLIdentity.ViewModels;
 using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
@@ -32,15 +32,16 @@ namespace MySQLIdentity.Controllers
         private DBContext context;
         private readonly IAuthenticationSchemeProvider authenticationSchemeProvider;
 
-        private readonly AccountService _accountService;
+ //       private readonly AccountService _accountService;
         //private string Token { set; get; }
 
         public UsersController(Microsoft.AspNetCore.Identity.UserManager<User> userManger, 
             SignInManager<User> signInManager,
             IConfiguration configuration,
             DBContext context,
-            IAuthenticationSchemeProvider authenticationSchemeProvider,
-            AccountService _accountService)
+            IAuthenticationSchemeProvider authenticationSchemeProvider
+            //,AccountService _accountService
+            )
         {
             _userManger = userManger;
             _signInManager = signInManager;
@@ -263,13 +264,14 @@ namespace MySQLIdentity.Controllers
 
 
 
-        [HttpPost]
+        /*
+         * [HttpPost]
         [Route("account/login/facebook")]
         public async Task<IActionResult> FacebookLoginAsync([FromBody] FacebookLoginResource resource)
         {
             var authorizationTokens = await _accountService.FacebookLoginAsync(resource);
             return Ok(authorizationTokens);
-        }
+        }*/
 
 
     }
