@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ahmed\\source\\repos\\MySQLDemo\\MySQLIdentity\\MySQLIdentity.csproj": {}
+    "E:\\Study\\UpWork\\Projects\\MySQLDemo\\MySQLIdentity\\MySQLIdentity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ahmed\\source\\repos\\MySQLDemo\\MySQLIdentity\\MySQLIdentity.csproj": {
+    "E:\\Study\\UpWork\\Projects\\MySQLDemo\\MySQLIdentity\\MySQLIdentity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ahmed\\source\\repos\\MySQLDemo\\MySQLIdentity\\MySQLIdentity.csproj",
+        "projectUniqueName": "E:\\Study\\UpWork\\Projects\\MySQLDemo\\MySQLIdentity\\MySQLIdentity.csproj",
         "projectName": "MySQLIdentity",
-        "projectPath": "C:\\Users\\ahmed\\source\\repos\\MySQLDemo\\MySQLIdentity\\MySQLIdentity.csproj",
+        "projectPath": "E:\\Study\\UpWork\\Projects\\MySQLDemo\\MySQLIdentity\\MySQLIdentity.csproj",
         "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ahmed\\source\\repos\\MySQLDemo\\MySQLIdentity\\obj\\",
+        "outputPath": "E:\\Study\\UpWork\\Projects\\MySQLDemo\\MySQLIdentity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -59,6 +59,10 @@
               "version": "[2.2.0, )",
               "autoReferenced": true
             },
+            "Microsoft.AspNetCore.Authentication.Core": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Razor.Design": {
               "suppressParent": "All",
               "target": "Package",
@@ -72,11 +76,15 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[2.2.3, )"
+              "version": "[2.2.4, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[2.2.0, )"
+            },
+            "Serenity.Data": {
+              "target": "Package",
+              "version": "[3.9.11, )"
             }
           },
           "imports": [

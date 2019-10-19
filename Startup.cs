@@ -4,6 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -45,6 +46,7 @@ namespace MySQLIdentity
                 options.Password.RequireLowercase = false;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
+                //options.User.
 
                 options.Password.RequiredLength = 4;
 
@@ -58,7 +60,28 @@ namespace MySQLIdentity
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 
+
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+
+
+
             })
+
+
+
+
+                .AddFacebook(o =>
+                {
+                    o.AppId = "571544680052202";//2696610280389263
+                    o.AppSecret = "9e3b8c48186c57195dfbec47c5d4ec93";//eb48688d2c22bb0dd559b3bee02df4f8
+                }).AddCookie(options => {
+                    options.LoginPath = "/auth/signin";
+                })
+
+
+
+
+
                 .AddJwtBearer(cfg =>
                 {
                     cfg.RequireHttpsMetadata = false;
@@ -83,7 +106,7 @@ namespace MySQLIdentity
             }
             //_ = app.UseIdentity();
             app.UseAuthentication();
-            
+
             app.UseMvc();
         }
     }

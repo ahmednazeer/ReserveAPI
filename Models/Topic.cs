@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MySQLIdentity.Models
 {
-    public class Category
+    public class Topic
     {
         public int ID { get; set; }
         public string Name { get; set; }

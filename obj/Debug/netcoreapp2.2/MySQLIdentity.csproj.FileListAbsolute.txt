@@ -12,3 +12,11 @@ C:\Users\ahmed\source\repos\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQ
 C:\Users\ahmed\source\repos\MySQLDemo\MySQLIdentity\bin\Debug\netcoreapp2.2\MySQLIdentity.pdb
 C:\Users\ahmed\source\repos\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.dll
 C:\Users\ahmed\source\repos\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.pdb
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.csprojAssemblyReference.cache
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.csproj.CoreCompileInputs.cache
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.RazorAssemblyInfo.cache
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.RazorAssemblyInfo.cs
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.AssemblyInfoInputs.cache
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.AssemblyInfo.cs
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.dll
+E:\Study\UpWork\Projects\MySQLDemo\MySQLIdentity\obj\Debug\netcoreapp2.2\MySQLIdentity.pdb

@@ -5,6 +5,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20190930142221_initial.cs" />
+    <Compile Remove="Migrations\20190930142221_initial.Designer.cs" />
+    <Compile Remove="Migrations\20191016203451_add_restEntities.cs" />
+    <Compile Remove="Migrations\20191016203451_add_restEntities.Designer.cs" />
+    <Compile Remove="Migrations\20191016210226_init.cs" />
+    <Compile Remove="Migrations\20191016210226_init.Designer.cs" />
+    <Compile Remove="Migrations\20191016210310_init.cs" />
+    <Compile Remove="Migrations\20191016210310_init.Designer.cs" />
+    <Compile Remove="Migrations\20191016230628_makeNameUnique.cs" />
+    <Compile Remove="Migrations\20191016230628_makeNameUnique.Designer.cs" />
+    <Compile Remove="Migrations\20191016232124_init.cs" />
+    <Compile Remove="Migrations\20191016232124_init.Designer.cs" />
+    <Compile Remove="Migrations\20191018153540_second.cs" />
+    <Compile Remove="Migrations\20191018153540_second.Designer.cs" />
+    <Compile Remove="Migrations\20191018160008_initi.cs" />
+    <Compile Remove="Migrations\20191018160008_initi.Designer.cs" />
+    <Compile Remove="Migrations\20191018165125_initi.cs" />
+    <Compile Remove="Migrations\20191018165125_initi.Designer.cs" />
+    <Compile Remove="Migrations\20191018170136_initi.cs" />
+    <Compile Remove="Migrations\20191018170136_initi.Designer.cs" />
+    <Compile Remove="Migrations\20191018170308_initi.cs" />
+    <Compile Remove="Migrations\20191018170308_initi.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
@@ -13,9 +38,11 @@
     <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.2" />
     <PackageReference Include="Microsoft.AspNet.Identity.Owin" Version="2.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Core" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.2.0" />
+    <PackageReference Include="Serenity.Data" Version="3.9.11" />
   </ItemGroup>
 
 </Project>

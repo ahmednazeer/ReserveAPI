@@ -9,8 +9,8 @@ using MySQLIdentity;
 namespace MySQLIdentity.Migrations
 {
     [DbContext(typeof(DBContext))]
-    [Migration("20190930142221_initial")]
-    partial class initial
+    [Migration("20191018170806_initi")]
+    partial class initi
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -75,7 +75,8 @@ namespace MySQLIdentity.Migrations
                         .IsRequired();
 
                     b.Property<string>("Email")
-                        .HasMaxLength(256);
+                        .IsRequired()
+                        .HasMaxLength(127);
 
                     b.Property<bool>("EmailConfirmed");
 
@@ -100,9 +101,14 @@ namespace MySQLIdentity.Migrations
                     b.Property<bool>("TwoFactorEnabled");
 
                     b.Property<string>("UserName")
-                        .HasMaxLength(256);
+                        .IsRequired()
+                        .HasMaxLength(127);
 
                     b.HasKey("Id");
+
+                    b.HasAlternateKey("Email");
+
+                    b.HasAlternateKey("UserName");
 
                     b.HasIndex("NormalizedEmail")
                         .HasName("EmailIndex");
@@ -185,23 +191,97 @@ namespace MySQLIdentity.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("MySQLIdentity.Models.Category", b =>
+            modelBuilder.Entity("MySQLIdentity.Models.Location", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.HasKey("ID");
 
-                    b.ToTable("Categories");
+                    b.HasAlternateKey("Name");
+
+                    b.ToTable("Locations");
+                });
+
+            modelBuilder.Entity("MySQLIdentity.Models.Place", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("LocationID");
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<int>("TopicID");
+
+                    b.HasKey("ID");
+
+                    b.HasAlternateKey("Name");
+
+                    b.HasIndex("LocationID");
+
+                    b.HasIndex("TopicID");
+
+                    b.ToTable("Places");
+                });
+
+            modelBuilder.Entity("MySQLIdentity.Models.Reservation", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("DateTime");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int>("LocationID");
+
+                    b.Property<int>("PlaceID");
+
+                    b.Property<string>("UserID")
+                        .IsRequired();
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("LocationID");
+
+                    b.HasIndex("PlaceID");
+
+                    b.HasIndex("UserID");
+
+                    b.ToTable("Reservations");
+                });
+
+            modelBuilder.Entity("MySQLIdentity.Models.Topic", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.HasKey("ID");
+
+                    b.HasAlternateKey("Name");
+
+                    b.ToTable("Topics");
                 });
 
             modelBuilder.Entity("MySQLIdentity.Models.User", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
-                    b.Property<int>("Age");
+                    b.Property<DateTime>("Date_of_Birth");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired();
+
+                    b.Property<string>("LastName")
+                        .IsRequired();
 
                     b.HasDiscriminator().HasValue("User");
                 });
@@ -248,6 +328,37 @@ namespace MySQLIdentity.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser")
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("MySQLIdentity.Models.Place", b =>
+                {
+                    b.HasOne("MySQLIdentity.Models.Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("MySQLIdentity.Models.Topic", "Topic")
+                        .WithMany()
+                        .HasForeignKey("TopicID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("MySQLIdentity.Models.Reservation", b =>
+                {
+                    b.HasOne("MySQLIdentity.Models.Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("MySQLIdentity.Models.Place", "Place")
+                        .WithMany()
+                        .HasForeignKey("PlaceID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("MySQLIdentity.Models.User", "User")
+                        .WithMany("Reservations")
+                        .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
