@@ -34,12 +34,13 @@ namespace MySQLIdentity
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             //services.AddDbContext<DBContext>(options=> options.UseMySql(Configuration.GetConnectionString("conn")));
-            services.AddDbContext<DBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("conn")));
+            services.AddDbContext<DBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
 
             services.AddDefaultIdentity<User>()
                 .AddEntityFrameworkStores<DBContext>()
                  .AddDefaultTokenProviders();
 
+            services.BuildServiceProvider().GetService<DBContext>().Database.Migrate();
 
             services.Configure<IdentityOptions>(options =>
             {
