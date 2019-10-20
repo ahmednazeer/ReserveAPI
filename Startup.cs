@@ -33,7 +33,8 @@ namespace MySQLIdentity
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<DBContext>(options=> options.UseMySql(Configuration.GetConnectionString("conn")));
+            //services.AddDbContext<DBContext>(options=> options.UseMySql(Configuration.GetConnectionString("conn")));
+            services.AddDbContext<DBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("conn")));
 
             services.AddDefaultIdentity<User>()
                 .AddEntityFrameworkStores<DBContext>()

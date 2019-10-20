@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAsDuxPbiV4Eev38jqABTwcQAAAAACAAAAAAAQZgAAAAEAACAAAACR0X0E7e6W1zIyAacW5gA8MVdX4CTvro0XNRpCZV9WOQAAAAAOgAAAAAIAACAAAAB4BKg7MP5QYVQ3YspsLZXKvXJkl8L1IhUrD71Jk11xkoAAAAA7I+7rshF6/HmbQZ72mFdo0/bBbHk07Iz8yTRFJmQl8eh1Ujac7xrZWj3y/nZegHD4yDsZROt+4jPN5eVGhy2mTNE6+JlBh0NmPViHp6bz9qbb6mOTcGM4KSy1tKfa6zS3dPJdWuCMbsVJrekdu3PyasV7m0kgoZYQe9HArV9c2UAAAACCZ06CUyJi+KM5LPQ7Z+3QOBm9gwJdEk5Yb5R/NcE2aK5Sag9WbiJdbCCJ4yS5Uev17Mujl4HulcZyrG7uqMDn</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="conn">
+      <Value>Server=tcp:reserveme45dbserver.database.windows.net,1433%3bInitial Catalog=ReserveMe45_db%3bPersist Security Info=False%3bUser ID=ahmed%3bPassword=An101045%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="MySQLIdentity.DBContext">
+      <Value>Server=tcp:reserveme45dbserver.database.windows.net,1433%3bInitial Catalog=ReserveMe45_db%3bPersist Security Info=False%3bUser ID=ahmed%3bPassword=An101045%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

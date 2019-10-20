@@ -8,4 +8,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAsDuxPbiV4Eev38jqABTwcQAAAAACAAAAAAAQZgAAAAEAACAAAADmbnuyiBedwYLcFlm+lkwq9AoiCnlF3GJiR8IRpxlFpQAAAAAOgAAAAAIAACAAAACI1ruXV7/uDvhP6OHWvDCY7rUPd+3dDen1NdHZ8LjXEIAAAAD+Ve5rbDyDiL5LbE2+1CY5yPqhp+PYGNFZfF4xh9gCeHa34377ViJ8YnzNvO2QSVh8bpnLkOpDJdkfWUfhA/glK2E+/aDGS5g8p7HZwujhZJEriP/UiYH+4wJcswdw3cp0UezKV9Tujv/0A4ub3wC6Gr/eEloYkATyt0GPinJ8ZEAAAADVJ7RDoFfUOESYerlP8cVOEkdlLEqa0DL9gIUa65a4nwQ5EnV/bqOMvf9DZ4ZCo48vlbptb0APTc9PGL8y8vfU</EncryptedPassword>
   </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="conn">
+      <Value>Data Source=tcp:reserveme45dbserver.database.windows.net,1433%3bInitial Catalog=ReserveMe45_db%3bUser Id=ahmed%3bPassword=An101045%3bTrusted_Connection=False%3bEncrypt=True%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="MySQLIdentity.DBContext">
+      <Value>Data Source=tcp:reserveme45dbserver.database.windows.net,1433%3bInitial Catalog=ReserveMe45_db%3bUser Id=ahmed%3bPassword=An101045%3bTrusted_Connection=False%3bEncrypt=True%3bConnection Timeout=30%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
 </Project>
