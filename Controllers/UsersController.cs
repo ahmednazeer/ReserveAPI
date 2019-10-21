@@ -212,7 +212,7 @@ namespace MySQLIdentity.Controllers
             //await _signInManager.SignOutAsync();
             return Ok("User loged out successfully");
         }
-
+        [Authorize]
         [HttpGet("user-registerations")]
         public IActionResult GetUsetReservations(string userId)
         {
