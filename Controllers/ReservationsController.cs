@@ -25,10 +25,10 @@ namespace MySQLIdentity.Controllers
             var reservations = context.Reservations.Where(res => res.UserID == userId).ToList();
             if (reservations.Count > 0)
             {
-                return Ok(reservations);
+                return Ok(new { status = "Success", data=reservations });
             }
 
-            return Ok("Empty Reservation List");
+            return Ok(new { status = "Success", data="Empty Reservation List" });
 
             
         }
@@ -40,11 +40,12 @@ namespace MySQLIdentity.Controllers
             {
                 context.Reservations.Add(model);
                 context.SaveChanges();
-                return Created("", model);
+                return Created("", new { status = "Fail", data = model });
+
             }
             else
             {
-                return BadRequest("Failed To Add Reservation");
+                return BadRequest(new { status = "Fail" });
             }
 
         }
@@ -59,9 +60,9 @@ namespace MySQLIdentity.Controllers
                 context.Reservations.Remove(reservation);
                 context.SaveChanges();
 
-                return Ok("Reservation Removed Successfully");
+                return Ok(new { status = "Success" });
             }
-            return BadRequest("Failed To Remove Reservation");
+            return BadRequest(new { status = "Fail" });
 
             /*if (ModelState.IsValid)
             {

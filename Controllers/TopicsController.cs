@@ -26,7 +26,7 @@ namespace MySQLIdentity.Controllers
             var topics = context.Topics.ToList();
             if (topics.Count == 0)
             {
-                Ok("Empty Topic List");
+                Ok(new { status = "Success", data = "Empty Topic List" });
             }
             return Ok(topics);
             
@@ -38,11 +38,11 @@ namespace MySQLIdentity.Controllers
             {
                 context.Topics.Add(model);
                 context.SaveChanges();
-                return Created("", model);
+                return Created("", new { status = "Success", data = model });
             }
             else
             {
-                return BadRequest("Topic Name Must be Unique");
+                return BadRequest(new { status = "Error", data = "Topic Name Must be Unique" });
             }
 
         }

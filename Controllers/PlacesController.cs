@@ -27,9 +27,9 @@ namespace MySQLIdentity.Controllers
 
             if (places.Count == 0)
             {
-                Ok("Empty Places List");
+                Ok(new { status = "Success", data = "Empty Places List" });
             }
-            return Ok(places);
+            return Ok(new { status = "Success" ,data = places });
         }
 
         [HttpPost("add")]
@@ -39,11 +39,11 @@ namespace MySQLIdentity.Controllers
             {
                 context.Places.Add(model);
                 context.SaveChanges();
-                return Created("", model);
+                return Created("", new { status = "Success", data = model });
             }
             else
             {
-                return BadRequest("Location Name Must be Unique");
+                return BadRequest(new { status = "Error", data = "Location Name Must be Unique" });
             }
 
         }
