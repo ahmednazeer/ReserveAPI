@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
@@ -67,16 +68,16 @@ namespace MySQLIdentity.Controllers
                 var result = await _userManger.CreateAsync(user,userModel.Password);
                 if (result == Microsoft.AspNetCore.Identity.IdentityResult.Success)
                 {
-                    return Ok("User Registered Successfully");
+                    return Ok(new { status = "Success" });
                 }
                 else 
                 {
-                    return BadRequest("Something wrong with your request");
+                    return BadRequest(new { status = "Fail" });
                 }
                 //return Ok();
             }
             catch (Exception e) {
-                return BadRequest(e.Message);
+                return BadRequest(new { status = "Fail",message= e.Message });
             }
 
         }
@@ -90,16 +91,16 @@ namespace MySQLIdentity.Controllers
 
             if (result.Succeeded)
             {
-                var appUser = _userManger.Users.SingleOrDefault(r => r.UserName == model.Email);
+                var appUser = _userManger.Users.Include("Reservations").SingleOrDefault(r => r.UserName == model.Email);
                 var token= GenerateJwtToken(model.Email, appUser);
                 //Token = token.ToString();
                 var user =await _userManger.FindByEmailAsync(model.Email.ToUpper());//await _userManger.FindByEmailAsync(model.Email).Id;
-                return new { token, user};
+                return  new { status = "Success", token, user };
             }
 
             else
             {
-                return BadRequest("INVALID_LOGIN_ATTEMPT");
+                return BadRequest(new { status = "Fail" });
 
             }
         }
@@ -110,7 +111,7 @@ namespace MySQLIdentity.Controllers
             if (ModelState.IsValid)
             {
                 var user = context._Users.SingleOrDefault(us => us.Id == model.ID);
-                if (user == null) return BadRequest("Error Updating User Info");
+                if (user == null) return BadRequest(new { status = "Error" });
 
 
                 user.Email = model.Email;
@@ -128,11 +129,11 @@ namespace MySQLIdentity.Controllers
                 //var x= Request.Headers["Authorization"][0].Substring(7);
                 //var v = await _userManger.ResetPasswordAsync(user, x, model.Password);
                 if(res==IdentityResult.Success)
-                    return Ok("User Info Updated Successfully");
-                return BadRequest("Failed To Update User Info");
+                    return Ok(new { status="Success",user });
+                return BadRequest(new { status = "Fail" });
 
             }
-            return BadRequest("Error User Info");
+            return BadRequest(new { status = "Error" });
 
 
         }
@@ -143,70 +144,20 @@ namespace MySQLIdentity.Controllers
             var user = context._Users.SingleOrDefault(us => us.Id == model.ID);
             if (user == null)
             {
-                return BadRequest("Error in Updating Password");
+                return BadRequest(new { status = "Error" });
             }
             string code = await _userManger.GeneratePasswordResetTokenAsync(user);
             //var x = Request.Headers["Authorization"][0];//.Substring(7);
             var v = await _userManger.ResetPasswordAsync(user, code, model.Password);
             if (v == IdentityResult.Success)
-                return Ok("Password Updated Successfully");
-            return BadRequest("Error in Updating Password");
+                return Ok(new { status = "Success" });
+            return BadRequest(new { status = "Fail" });
 
         }
 
 
-        /*
-        [HttpGet("login")]
-        public async Task<IActionResult> Login(string email,string password, bool rememberMe) {
-
-            if (!email.Equals(null) && !password.Equals(null))
-            {
-                return await LoginByEmail(email, password);
-
-            }
-            else if(password==null)
-            {
-                return BadRequest("Insert Password");
-            }
-            else if(email==null) {
-                return BadRequest("Insert Email");
-
-            }
-            else
-            {
-                return BadRequest("Insert Email and Password");
-
-            }
-        }
-        */
-        /*
-        private async Task<IActionResult> LoginByEmail(string email,string password)
-        {
-            var user = await _userManger.FindByEmailAsync(email);
-            return user == null ? BadRequest("Invalid Username or Password") : CheckPassword(user,password);
-        }
-
-        private async Task<IActionResult> LoginByUsername(string username, string password)
-        {
-            var user = await _userManger.FindByNameAsync(username);
-            return user == null ? BadRequest("Invalid Username or Password") : CheckPassword(user, password);
-        }
-
-        private IActionResult CheckPassword(User user,string password)
-        {
-            
-            if (user.PasswordHash== password)
-            {
-                return Ok(user);
-            }
-            else
-            {
-                return BadRequest("Invalid Username or Password");
-            }
-
-
-        }
-        */
+        
+        
         private object GenerateJwtToken(string email, User user)
         {
             var claims = new List<Claim>
@@ -262,7 +213,14 @@ namespace MySQLIdentity.Controllers
             return Ok("User loged out successfully");
         }
 
-
+        [HttpGet("user-registerations")]
+        public IActionResult GetUsetReservations(string userId)
+        {
+            var user = context._Users.Include("Reservations").SingleOrDefault(us => us.Id == userId);
+            if (user == null)
+                return BadRequest(new { status = "Error" });
+            return Ok(new { status = "Success", user });
+        }
 
         /*
          * [HttpPost]

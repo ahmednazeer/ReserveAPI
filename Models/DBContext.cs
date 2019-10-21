@@ -16,11 +16,11 @@ namespace MySQLIdentity
         {
 
         }
-        public DbSet<User> _Users { get; set; }
-        public DbSet<Topic> Topics { get; set; }
-        public DbSet<Place> Places { get; set; }
-        public DbSet<Location> Locations { get; set; }
-        public DbSet<Reservation> Reservations { get; set; }
+        public virtual DbSet<User> _Users { get; set; }
+        public virtual DbSet<Topic> Topics { get; set; }
+        public virtual DbSet<Place> Places { get; set; }
+        public virtual DbSet<Location> Locations { get; set; }
+        public virtual DbSet<Reservation> Reservations { get; set; }
 
         
         protected override void OnModelCreating(ModelBuilder builder)

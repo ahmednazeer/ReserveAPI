@@ -17,10 +17,10 @@ namespace MySQLIdentity.Models
         public string UserID { get; set; }
         [Required]
         public int PlaceID { get; set; }
-        [Required]
-        public int LocationID { get; set; }
+        //[Required]
+        //public int LocationID { get; set; }
 
-        public virtual Location Location { get; set; }
+        //public virtual Location Location { get; set; }
         public virtual Place Place { get; set; }
         public virtual User User { get; set; }
     }
